@@ -33,4 +33,28 @@ public class CalculatorController {
 		}
 	}
 
+	@RequestMapping("/times")
+	public Response times(@RequestParam String first, @RequestParam String second) {
+		try {
+			int firstInt = Integer.parseInt(first);
+			int secondInt = Integer.parseInt(second);
+			int sum = calculator.times(firstInt, secondInt);
+			return new Response("SUCESS", sum);
+		} catch(Exception e) {
+			return new Response("FAILURE", -1);
+		}
+	}
+
+	@RequestMapping("/divide")
+	public Response divide(@RequestParam String first, @RequestParam String second) {
+		try {
+			int firstInt = Integer.parseInt(first);
+			int secondInt = Integer.parseInt(second);
+			int sum = calculator.divide(firstInt, secondInt);
+			return new Response("SUCESS", sum);
+		} catch(Exception e) {
+			return new Response("FAILURE", -1);
+		}
+	}
+
 }

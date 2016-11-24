@@ -6,8 +6,10 @@ public class Calculator {
 		return first + second;
 	}
 
-	public int minus(int first, int second) {
-		return -1;
-	}
+	public int minus(int first, int second) { return first - second; }
+
+	public int times(int first, int second) { return first * second; }
+
+	public int divide(int first, int second) { return first/second; }
 
 }
