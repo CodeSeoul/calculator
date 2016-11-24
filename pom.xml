@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.learntocodeseoul</groupId>
-	<artifactId>calculator-server</artifactId>
+	<artifactId>calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>calculator.server</name>
-	<description>Demo project for Spring Boot</description>
+	<name>calculator</name>
+	<description>Calculator</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -45,6 +45,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

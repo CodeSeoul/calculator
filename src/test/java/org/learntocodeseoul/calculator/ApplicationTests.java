@@ -1,4 +1,4 @@
-package org.learntocodeseoul.calculator.server;
+package org.learntocodeseoul.calculator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
