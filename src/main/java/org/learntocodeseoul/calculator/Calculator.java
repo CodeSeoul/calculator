@@ -2,14 +2,14 @@ package org.learntocodeseoul.calculator;
 
 public class Calculator {
 
-	public int plus(int first, int second) {
+	public long plus(long first, long second) {
 		return first + second;
 	}
 
-	public int minus(int first, int second) { return first - second; }
+	public long minus(long first, long second) { return first - second; }
 
-	public int times(int first, int second) { return first * second; }
+	public long times(long first, long second) { return first * second; }
 
-	public int divide(int first, int second) { return first/second; }
+	public long divide(long first, long second) { return first/second; }
 
 }

@@ -3,12 +3,12 @@ package org.learntocodeseoul.calculator;
 public class Response {
 
 	private String status;
-	private int result;
+	private long result;
 
 	public Response() {
 	}
 
-	public Response(String status, int result) {
+	public Response(String status, long result) {
 		this.status = status;
 		this.result = result;
 	}
@@ -21,11 +21,11 @@ public class Response {
 		this.status = status;
 	}
 
-	public int getResult() {
+	public long getResult() {
 		return result;
 	}
 
-	public void setResult(int result) {
+	public void setResult(long result) {
 		this.result = result;
 	}
 }
