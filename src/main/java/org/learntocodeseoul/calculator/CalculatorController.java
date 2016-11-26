@@ -12,9 +12,9 @@ public class CalculatorController {
 	@RequestMapping("/plus")
 	public Response plus(@RequestParam String first, @RequestParam String second) {
 		try {
-			int firstInt = Integer.parseInt(first);
-			int secondInt = Integer.parseInt(second);
-			int sum = calculator.plus(firstInt, secondInt);
+			long firstLong = Long.parseLong(first);
+			long secondLong = Long.parseLong(second);
+			long sum = calculator.plus(firstLong, secondLong);
 			return new Response("SUCESS", sum);
 		} catch(Exception e) {
 			return new Response("FAILURE", -1);
@@ -24,9 +24,9 @@ public class CalculatorController {
 	@RequestMapping("/minus")
 	public Response minus(@RequestParam String first, @RequestParam String second) {
 		try {
-			int firstInt = Integer.parseInt(first);
-			int secondInt = Integer.parseInt(second);
-			int sum = calculator.minus(firstInt, secondInt);
+			long firstLong = Long.parseLong(first);
+			long secondLong = Long.parseLong(second);
+			long sum = calculator.minus(firstLong, secondLong);
 			return new Response("SUCESS", sum);
 		} catch(Exception e) {
 			return new Response("FAILURE", -1);
@@ -36,9 +36,9 @@ public class CalculatorController {
 	@RequestMapping("/times")
 	public Response times(@RequestParam String first, @RequestParam String second) {
 		try {
-			int firstInt = Integer.parseInt(first);
-			int secondInt = Integer.parseInt(second);
-			int sum = calculator.times(firstInt, secondInt);
+			long firstLong = Long.parseLong(first);
+			long secondLong = Long.parseLong(second);
+			long sum = calculator.times(firstLong, secondLong);
 			return new Response("SUCESS", sum);
 		} catch(Exception e) {
 			return new Response("FAILURE", -1);
@@ -48,9 +48,9 @@ public class CalculatorController {
 	@RequestMapping("/divide")
 	public Response divide(@RequestParam String first, @RequestParam String second) {
 		try {
-			int firstInt = Integer.parseInt(first);
-			int secondInt = Integer.parseInt(second);
-			int sum = calculator.divide(firstInt, secondInt);
+			long firstLong = Long.parseLong(first);
+			long secondLong = Long.parseLong(second);
+			long sum = calculator.divide(firstLong, secondLong);
 			return new Response("SUCESS", sum);
 		} catch(Exception e) {
 			return new Response("FAILURE", -1);
