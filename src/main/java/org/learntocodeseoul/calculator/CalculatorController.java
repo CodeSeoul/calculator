@@ -22,13 +22,11 @@ public class CalculatorController {
 		}
 
 		try {
-			long answer = -1;
-			if (operation.equals("plus")) {
-				answer = calculator.plus(firstLong, secondLong);
-			}
+			long answer = calculator.compute(operation, firstLong, secondLong);
 			return new Response("SUCESS", answer);
 		} catch(Exception e) {
 			return new Response("FAILURE", -1);
+			// TODO change Response class to take a string for error messages
 		}
 	}
 
@@ -39,38 +37,17 @@ public class CalculatorController {
 
 	@RequestMapping("/minus")
 	public Response minus(@RequestParam String first, @RequestParam String second) {
-		try {
-			long firstLong = Long.parseLong(first);
-			long secondLong = Long.parseLong(second);
-			long sum = calculator.minus(firstLong, secondLong);
-			return new Response("SUCESS", sum);
-		} catch(Exception e) {
-			return new Response("FAILURE", -1);
-		}
+		return calculate("minus", first, second);
 	}
 
 	@RequestMapping("/times")
 	public Response times(@RequestParam String first, @RequestParam String second) {
-		try {
-			long firstLong = Long.parseLong(first);
-			long secondLong = Long.parseLong(second);
-			long sum = calculator.times(firstLong, secondLong);
-			return new Response("SUCESS", sum);
-		} catch(Exception e) {
-			return new Response("FAILURE", -1);
-		}
+		return calculate("times", first, second);
 	}
 
 	@RequestMapping("/divide")
 	public Response divide(@RequestParam String first, @RequestParam String second) {
-		try {
-			long firstLong = Long.parseLong(first);
-			long secondLong = Long.parseLong(second);
-			long sum = calculator.divide(firstLong, secondLong);
-			return new Response("SUCESS", sum);
-		} catch(Exception e) {
-			return new Response("FAILURE", -1);
-		}
+		return calculate("divide", first, second);
 	}
 
 }
