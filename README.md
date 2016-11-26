@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/LearnToCodeSeoul/calculator.svg?branch=master)](https://travis-ci.org/LearnToCodeSeoul/calculator)
+
 # Calculator
 > Simple calculator written in Java
 
