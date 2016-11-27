@@ -11,10 +11,6 @@ export default class Calculator extends React.Component {
 		}
 	}
 
-	handleChange(event) {
-		
-	}
-
 	handleClick(event) {
 		const op = this.state.operator;
 		const fi = parseFloat(this.state.first);
