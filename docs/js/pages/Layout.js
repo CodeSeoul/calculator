@@ -1,10 +1,13 @@
 import React from "react";
 
+import Calculator from "../components/Calculator"
+
 export default class Layout extends React.Component {
   render() {
     return (
-        <div>
-          <h1>Learn To Code Seoul - Calculator</h1>
+        <div class="container">
+          <h1>Simeple Calculator</h1>
+          <Calculator />
         </div>
     );
   }
