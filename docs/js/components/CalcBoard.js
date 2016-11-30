@@ -1,41 +1,35 @@
 import React from "react";
 
 import CalcKey from "./CalcKey";
+import {KEYS} from "../models/Keys";
 
 class CalcBoard extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.calcKeys = KEYS.map(k => 
+			<CalcKey key={k.idx} type={k.type} value={k.value} click={this.props.updateScreen} />
+		);
+	}
+
 	render() {
 	  return (
 	    <div id="calc-board">
 	    	<div class="container-fluid">
 	        <div class="row">
-	        	<CalcKey type="reset" value="C" />
-	        	<CalcKey type="paren" value="(" />
-	        	<CalcKey type="paren" value=")" />
-	          <CalcKey type="op" value="+" />
+	        	{this.calcKeys.slice(0, 4)}
 	        </div>
 	        <div class="row">
-	        	<CalcKey type="num" value="7" />
-	        	<CalcKey type="num" value="8" />
-	        	<CalcKey type="num" value="9" />
-	        	<CalcKey type="op" value="-" />
+	        	{this.calcKeys.slice(4, 8)}
 	        </div>
 	        <div class="row">
-	        	<CalcKey type="num" value="4" />
-	        	<CalcKey type="num" value="5" />
-	        	<CalcKey type="num" value="6" />
-	        	<CalcKey type="op" value="*" />
+	        	{this.calcKeys.slice(8, 12)}
 	        </div>
 	        <div class="row">
-	        	<CalcKey type="num" value="1" />
-	        	<CalcKey type="num" value="2" />
-	        	<CalcKey type="num" value="3" />
-	        	<CalcKey type="op" value="/" />
+	        	{this.calcKeys.slice(12, 16)}
 	        </div>
 	        <div class="row">
-	        	<CalcKey type="num" value="." />
-	        	<CalcKey type="num" value="0" />
-	        	<CalcKey type="num" value="00" />
-	        	<CalcKey type="eq" value="=" />
+	        	{this.calcKeys.slice(16, 20)}
 	        </div>
 	      </div>
 		  </div>

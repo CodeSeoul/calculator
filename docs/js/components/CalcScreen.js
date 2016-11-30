@@ -5,7 +5,7 @@ class CalcScreen extends React.Component {
 	  return (
   		<div class="calc-screen container-fluid">
 	      <div class="row">
-	        <input type="text" class="form-control input-lg" />
+	        <input type="text" class="form-control input-lg" value={this.props.text} />
 	      </div>
       </div>
 		);
