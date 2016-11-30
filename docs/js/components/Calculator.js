@@ -31,7 +31,10 @@ export default class Calculator extends React.Component {
 
 	render() {
 		return (
-			<div class="row">
+			<div class="row-fluid">
+				<div class="page-header">
+					<h1>Calculator <small>(ver. 1)</small></h1>
+				</div>
 				<div class="btn-toolbar" role="toolbar">
 					<div class="btn-group" role="group">
 						<input value={this.state.first} onChange={(event) => this.setState({first: event.target.value})} type="number" class="form-control" id="first" placeholder="first" />

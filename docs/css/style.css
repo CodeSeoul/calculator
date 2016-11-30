@@ -1,0 +1,10 @@
+div#calc-v2 {
+	width: 280px;
+}
+
+#calc-board .btn {
+  width: 23%;
+  margin: 1%;
+  font-weight: bold;
+  font-size: 20px;
+}
