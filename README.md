@@ -3,6 +3,9 @@
 # Calculator
 > Simple calculator written in Java
 
+# Screenshot
+![screenshot](docs/img/homescreen.png)
+
 ## How to run
 - Mac O/S, Linux
 ```
