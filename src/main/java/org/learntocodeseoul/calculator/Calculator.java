@@ -6,7 +6,7 @@ public class Calculator {
 		if (operator == null) {
 			throw new RuntimeException("Operator can't be null");
 		}
-		switch(operator){
+		switch (operator) {
 			case "plus":
 				return plus(first, second);
 			case "minus":
@@ -19,14 +19,25 @@ public class Calculator {
 				throw new RuntimeException("Invalid Operator");
 		}
 	}
+
 	public long plus(long first, long second) {
 		return first + second;
 	}
 
-	public long minus(long first, long second) { return first - second; }
+	public long minus(long first, long second) {
+		return first - second;
+	}
 
-	public long times(long first, long second) { return first * second; }
+	public long times(long first, long second) {
+		return first * second;
+	}
 
-	public long divide(long first, long second) { return first/second; }
+	public long divide(long first, long second) {
+		if (second == 0) {
+			throw new CalculatorException(CalculatorException.ZERO_DIV);
+		} else {
+			return first / second;
+		}
 
+	}
 }

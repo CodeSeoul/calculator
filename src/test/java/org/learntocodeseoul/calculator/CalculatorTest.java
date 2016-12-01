@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -34,7 +35,6 @@ public class CalculatorTest {
         long rand2 = rand.nextLong();
         long expected = rand1 / rand2;
         assertEquals(rand1 + " divided by " + rand2 + "must be " + expected, expected , calc.divide(rand1,rand2));
-
     }
     @Test
     public void testMult(){
@@ -56,6 +56,16 @@ public class CalculatorTest {
     public void testComputeAbnormal(){
         calc.compute("PLUS", 1, 2);
         calc.compute(null, 1, 2);
+    }
+
+    @Test
+    public void testZeroDiv(){
+        try{
+            calc.divide(1,0);
+        }catch(Exception e){
+            assertTrue(e instanceof CalculatorException);
+            assertEquals(CalculatorException.ZERO_DIV, e.getMessage());
+        }
     }
 
 }

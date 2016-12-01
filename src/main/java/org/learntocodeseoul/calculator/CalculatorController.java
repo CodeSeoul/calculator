@@ -15,6 +15,7 @@ public class CalculatorController {
 		long firstLong;
 		long secondLong;
 		try {
+			// TODO change exception handling from default to custom for null values
 			firstLong = Long.parseLong(first);
 			secondLong = Long.parseLong(second);
 		} catch (Exception e) {
