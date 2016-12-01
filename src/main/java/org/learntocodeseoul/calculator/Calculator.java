@@ -2,6 +2,10 @@ package org.learntocodeseoul.calculator;
 
 public class Calculator {
 
+	public long calculate(String expression) {
+		return -1;
+	}
+
 	public long compute(String operator, long first, long second) {
 		if (operator == null) {
 			throw new RuntimeException("Operator can't be null");
@@ -40,4 +44,5 @@ public class Calculator {
 		}
 
 	}
+
 }

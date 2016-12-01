@@ -6,7 +6,6 @@ import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 /**
  * Created by hector on 11/26/16.
@@ -15,7 +14,27 @@ public class CalculatorTest {
     private Calculator calc = new Calculator();
     private Random rand = new Random();
 
-    @Test
+	@Test
+	public void testCalculate() {
+		assertEquals(-3, calc.calculate("(1+2)*(3-4)"));
+		assertEquals(4, calc.calculate("((1+2)*3)-5"));
+
+		try {
+			calc.calculate("(((1+2)*3)-5");
+		} catch (Exception e) {
+			assertTrue(e instanceof CalculatorException);
+			assertEquals(CalculatorException.MISMATCH_PARENS, e.getMessage());
+		}
+
+		try {
+			calc.calculate("a+b");
+		} catch (Exception e) {
+			assertTrue(e instanceof CalculatorException);
+			assertEquals(CalculatorException.INVALID_INPUT, e.getMessage());
+		}
+	}
+
+	@Test
     public void testPlus(){
         long rand1 = rand.nextLong();
         long rand2 = rand.nextLong();
