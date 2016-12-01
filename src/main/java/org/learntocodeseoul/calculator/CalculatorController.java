@@ -19,14 +19,14 @@ public class CalculatorController {
 			firstLong = Long.parseLong(first);
 			secondLong = Long.parseLong(second);
 		} catch (Exception e) {
-			return new Response("FAILURE", -1);
+			return new Response("FAILURE", -1, e.getMessage());
 		}
 
 		try {
 			long answer = calculator.compute(operation, firstLong, secondLong);
 			return new Response("SUCESS", answer);
 		} catch(Exception e) {
-			return new Response("FAILURE", -1);
+			return new Response("FAILURE", -1, e.getMessage());
 			// TODO change Response class to take a string for error messages
 		}
 	}
