@@ -6,6 +6,7 @@ import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Created by hector on 11/26/16.
@@ -15,24 +16,31 @@ public class CalculatorTest {
     private Random rand = new Random();
 
 	@Test
-	public void testCalculate() {
-		assertEquals(-3, calc.calculate("(1+2)*(3-4)"));
-		assertEquals(4, calc.calculate("((1+2)*3)-5"));
+    public void testCalculate() {
+        assertEquals(10002, calc.calculate("10000+2"));
+    //    assertEquals(-3, calc.calculate("(1+2)*(3-4)"));
+    //    assertEquals(4, calc.calculate("((1+2)*3)-5"));
+    }
+    @Test
+    public void testCalculate1() {
+        try {
+            calc.calculate("(((1+2)*3)-5");
+        } catch (Exception e) {
+            assertTrue(e instanceof CalculatorException);
+            assertEquals(CalculatorException.MISMATCH_PARENS, e.getMessage());
+        }
+    }
 
-		try {
-			calc.calculate("(((1+2)*3)-5");
-		} catch (Exception e) {
-			assertTrue(e instanceof CalculatorException);
-			assertEquals(CalculatorException.MISMATCH_PARENS, e.getMessage());
-		}
-
-		try {
-			calc.calculate("a+b");
-		} catch (Exception e) {
-			assertTrue(e instanceof CalculatorException);
-			assertEquals(CalculatorException.INVALID_INPUT, e.getMessage());
-		}
-	}
+    @Test
+    public void testCalculate2(){
+        try {
+            calc.calculate("a+b");
+            fail();
+        } catch (Exception e) {
+            assertTrue(e instanceof CalculatorException);
+            assertEquals(CalculatorException.INVALID_INPUT, e.getMessage());
+        }
+    }
 
 	@Test
     public void testPlus(){

@@ -1,8 +1,56 @@
 package org.learntocodeseoul.calculator;
 
-public class Calculator {
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.LinkedList;
 
+public class Calculator {
+	private LinkedList<Character> validCharacters = new LinkedList<>();
+	public Calculator(){
+		char[] operators = {'+', '-', '/', '*'};
+		char[] numbers = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+		char[] paren = {'(', ')'};
+		for (int i = 0; i < operators.length; i++) {
+			validCharacters.add(operators[i]);
+		}
+		for (int i = 0; i < numbers.length; i++) {
+			validCharacters.add(numbers[i]);
+		}
+		for (int i = 0; i < paren.length ; i++) {
+			validCharacters.add(paren[i]);
+		}
+
+	}
 	public long calculate(String expression) {
+		char[] chars = expression.toCharArray();
+		for (int i = 0; i < chars.length; i++) {
+			if (!validCharacters.contains(chars[i])) {
+				throw new CalculatorException(CalculatorException.INVALID_INPUT);
+			}
+		}
+		String[] values = expression.split("\\+");
+
+		for (int i = 0; i < values.length; i++) {
+			System.out.println(values[i]);
+		}
+		long first = Long.parseLong(values[0]);
+		long second = Long.parseLong(values[1]);
+		System.out.println(first + " + " + second);
+		String op = "+";
+		switch(op){
+			case "+":
+				return first + second;
+			case "/":
+				return first / second;
+			case "-":
+				return first - second;
+			case "*":
+				return first * second;
+		}
+
+
+
+
 		return -1;
 	}
 
