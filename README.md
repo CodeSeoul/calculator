@@ -4,7 +4,7 @@
 > Simple calculator written in Java
 
 # Screenshot
-![screenshot](docs/img/homescreen.png)
+![screenshot](docs/img/calc.png)
 
 ## How to run
 - Mac O/S, Linux
